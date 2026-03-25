@@ -116,6 +116,11 @@ db.ref("players").on("value", snap=>{
 
 // START GAME
 function startGame(){
+  if(!db){
+    alert("Database belum siap!");
+    return;
+  }
+
   db.ref("game").set({start:true});
 }
 
